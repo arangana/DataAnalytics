@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1.1", {packages:["table"]});
+      
+   function createDD() {
+      var ss=SpreadsheetApp.getActiveSpreadsheet('https://docs.google.com/spreadsheets/d/1A0_wd5jd_CoSNN-F0D6OlE-9IsaMHtYLF4CdkAVE8mQ/edit?usp=sharing');
+      var s=ss.getActiveSheet('adi');
+      var vals=s.getDataRange().getValues().map(function (x) {return x[0];});//returns an array of the values in column A
+      var rule=SpreadsheetApp.newDataValidation().requireValueInList(vals);//builds a rule for data validation using those values
+      s.getRange(1, 2).setDataValidation(rule);//assigns that rule to cell B1 (row 1, column 2)
+    }
+
+
+ </script>
+  </head>
+  <body>
+     createDD();
+  </body>
+</html>

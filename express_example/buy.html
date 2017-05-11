@@ -1,0 +1,353 @@
+<html>
+
+<head>
+<style>
+@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Oxygen);
+
+/* Page layout */
+
+body {
+    background-color: #C0C0C0;
+    margin: 0;
+    padding: 0;
+    font-family: 'Oxygen', sans-serif;
+    color: #444;
+    font-size: 15px;
+    line-height: 18px;
+    font-weight: 300;
+}
+
+header {
+    margin: 0;
+    background: #000;
+    height: 65px;
+    padding: 1px;
+}
+
+article {
+    margin: 40px 30px;
+}
+
+h1 {
+    font-family: 'Open Sans Condensed', sans-serif;
+    letter-spacing: 1px;
+    font-size: 2.3em;
+    line-height: 44px;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 900;
+    margin: 0;
+    padding: 10px 0 0 30px;
+    letter-spacing: 2px;
+}
+
+h2 { margin: 20px 0 10px 0;
+    font-weight: 900;
+}
+
+p {
+    margin: 20px 0 5px 0;
+}
+
+
+/* Table Layout */
+
+table.vitamins {
+    margin: 20px 0 0 0;
+    border-collapse: collapse;
+    border-spacing: 0;
+    background: #212121;
+    color: #fff;
+}
+
+table.vitamins th, table.vitamins td {
+    text-align: center;
+}
+
+table.vitamins thead {
+    line-height: 12px;
+    background: #2e63e7;
+    text-transform: uppercase;
+}
+
+table.vitamins thead th {
+    color: #fff;
+    padding: 10px;
+    letter-spacing: 1px;
+    vertical-align: bottom;
+}
+
+table.vitamins thead th:nth-child(1) {
+    width: 20%;
+    text-align: left;
+    padding-left: 20px;
+}
+
+table.vitamins thead th:nth-child(2) {
+    width: 30%;
+}
+
+table.vitamins thead th:nth-child(3) {
+    width: 35%;
+}
+
+table.vitamins thead th:nth-child(4) {
+    width: 15%;
+}
+
+table.vitamins tbody {
+    font-size: 1em;
+    line-height: 15px;
+}
+
+table.vitamins tbody tr {
+    border-top: 2px solid rgba(109, 176, 231, 0.8);
+    transition: background 0.6s, color 0.6s;
+}
+
+table.vitamins tbody tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+table.vitamins tbody tr:hover {
+    color: #000;
+    background: rgba(255, 255, 255, 0.7);
+    font-weight: 900;
+}
+
+table.vitamins tbody td {
+    padding: 12px;
+}
+
+table.vitamins tbody tr:hover td:first-child {
+    background: rgba(0,0,0,0);
+}
+
+table.vitamins tbody td:first-child {
+    text-align: left;
+    padding-left: 20px;
+    font-weight: 700;
+    background: rgba(109, 176, 231, 0.35);
+    transition: backgrounf 0.6s;
+}
+
+table.vitamins tfoot {
+    font-size: 0.8em;
+}
+
+table.vitamins tfoot tr {
+    border-top: 2px solid #2e63e7;
+}
+
+table.vitamins tfoot td {
+    color: rgba(255,255,215,0.6);
+    text-align: left;
+    line-height: 15px;
+    padding: 15px 20px;
+}
+
+
+/* Mobile Layout */
+
+@media screen and (max-width: 400px) {
+    h1 {
+        font-size: 34px;
+        line-height: 36px;
+        padding-left: 15px;
+    }
+
+    article {
+        margin: 10px 15px;
+    }
+
+    table.vitamins {
+        font-size: 0.8em;
+    }
+}
+</style>
+</head>
+
+
+<body>
+  <center><h1>Homes Available for Sale</h1></center>
+
+  <% for (var i = data.length - 1; i >= 0; i--) { %>
+    <article>
+    <center>
+  	<table class="vitamins">
+      <thead>
+            <tr>
+                <th>Home # <%= i + 1 %></th>
+                <th>AVAILABLE HOME DETAILS</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <td colspan="2">
+                    <p><strong>Please contact home owner for more details.</strong> </p>
+               
+                </td>
+            </tr>
+        </tfoot>
+        <tbody>
+          <tr>
+            <td><b>Name</b></td>
+            <td><b><%= data[i].name %></b></td>
+          </tr>    
+          <tr>
+            <td><b>Email</b></td>
+            <td><%= data[i].email %></td>
+          </tr> 
+          <tr>
+            <td><b>Phone</b></td>
+            <td><%= data[i].phone %></td>
+          </tr>
+          <tr>
+            <td><b>Lot Area</b></td>
+            <td><%= data[i].lotarea %></td>
+          </tr>
+          <tr>
+            <td><b>Street</b></td>
+            <td><%= data[i].street %></td>
+          </tr>
+          <tr>
+            <td><b>Lot Shape</b></td>
+            <td><b><%= data[i].lotshape %></b></td>
+          </tr>    
+          <tr>
+            <td><b>Land Contour</b></td>
+            <td><%= data[i].landcontour %></td>
+          </tr> 
+          <tr>
+            <td><b>Lot Configuration</b></td>
+            <td><%= data[i].lotconfig %></td>
+          </tr>
+          <tr>
+            <td><b>Land Slope</b></td>
+            <td><%= data[i].landslope %></td>
+          </tr>
+          <tr>
+            <td><b>Neighborhood</b></td>
+            <td><%= data[i].neighborhood %></td>
+          </tr>
+          <tr>
+            <td><b>Proximity to Hubs 1</b></td>
+            <td><b><%= data[i].condition1 %></b></td>
+          </tr>    
+          <tr>
+            <td><b>roximity to Hubs 1</b></td>
+            <td><%= data[i].condition2 %></td>
+          </tr> 
+          <tr>
+            <td><b>Building Type</b></td>
+            <td><%= data[i].bldgtype %></td>
+          </tr>
+          <tr>
+            <td><b>House Style</b></td>
+            <td><%= data[i].housestyle %></td>
+          </tr>
+          <tr>
+            <td><b>Overall House Quality</b></td>
+            <td><%= data[i].overallqual %></td>
+          </tr>
+          <tr>
+            <td><b>Overall House Condition</b></td>
+            <td><b><%= data[i].overallcond %></b></td>
+          </tr>    
+          <tr>
+            <td><b>Year Built</b></td>
+            <td><%= data[i].yearbuilt %></td>
+          </tr> 
+          <tr>
+            <td><b>Year Remodeled</b></td>
+            <td><%= data[i].yearremod %></td>
+          </tr>
+          <tr>
+            <td><b>Roof Material</b></td>
+            <td><%= data[i].roofmaterial %></td>
+          </tr>
+          <tr>
+            <td><b>Masonary Veneer Type</b></td>
+            <td><%= data[i].masonarytype %></td>
+          </tr>
+          <tr>
+            <td><b>Masonary Area</b></td>
+            <td><b><%= data[i].masonaryarea %></b></td>
+          </tr>    
+          <tr>
+            <td><b>External Home Quality</b></td>
+            <td><%= data[i].exterqual %></td>
+          </tr> 
+          <tr>
+            <td><b>Basement Area</b></td>
+            <td><%= data[i].totalbsmtarea %></td>
+          </tr>
+          <tr>
+            <td><b>First Floor Area</b></td>
+            <td><%= data[i].x1stflrarea %></td>
+          </tr>
+          <tr>
+            <td><b>Living Area</b></td>
+            <td><%= data[i].grlivarea %></td>
+          </tr>
+          <tr>
+            <td><b>Total Rooms</b></td>
+            <td><b><%= data[i].totrmsabvgrd %></b></td>
+          </tr>    
+          <tr>
+            <td><b>Kitchen Quality</b></td>
+            <td><%= data[i].kitchenqual %></td>
+          </tr> 
+          <tr>
+            <td><b>Total Fireplaces</b></td>
+            <td><%= data[i].fireplaces %></td>
+          </tr>
+          <tr>
+            <td><b>Garage Finish</b></td>
+            <td><%= data[i].garagefinish %></td>
+          </tr>
+          <tr>
+            <td><b>Garage Capacity (Cars)</b></td>
+            <td><%= data[i].garagecars %></td>
+          </tr>
+          <tr>
+            <td><b>Garage Area</b></td>
+            <td><%= data[i].garagearea %></td>
+          </tr>
+          <tr>
+            <td><b>Garage Quality</b></td>
+            <td><b><%= data[i].garagequal %></b></td>
+          </tr>    
+          <tr>
+            <td><b>Garage Condition</b></td>
+            <td><%= data[i].garagecond %></td>
+          </tr> 
+          <tr>
+            <td><b>Pool Area</b></td>
+            <td><%= data[i].poolarea %></td>
+          </tr>
+          <tr>
+            <td><b>Sale Type</b></td>
+            <td><%= data[i].saletype %></td>
+          </tr>
+          <tr>
+            <td><b>Sale Price</b></td>
+            <td>$<%= data[i].saleprice %></td>
+          </tr>
+        </tbody>
+    </table>
+  </center>
+  </article>
+    <br><br><br>
+  <% } %>
+
+</body>
+</html>
+
+<script>
+$(function() {    
+    $(".vitamins > thead > tr").click(function() {
+        $(this).closest(".vitamins").find("tbody > tr").fadeOut();
+    });
+});
+</script>
